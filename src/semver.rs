@@ -17,6 +17,9 @@ impl Version {
         }
     }
     pub fn from_str(in_str: &str) -> Result<Version, String> {
+        if in_str.contains("+") || in_str.contains("-") {
+            return Err(format!("Invalid semver {}", in_str));
+        }
         let parts = in_str.split(".").map(|s| s.parse() ).collect::<Vec<Result<i32,_>>>();
         if parts.iter().any(|r| r.is_err()) {
             return Err(format!("Invalid semver {}", in_str));
