@@ -1,4 +1,7 @@
-image rustlang/rust:nightly
+image: rustlang/rust:nightly
+
+stages:
+  - test
 
 test_job:
     script:
