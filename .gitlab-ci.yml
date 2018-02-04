@@ -1,0 +1,5 @@
+image rustlang/rust:nightly
+
+test_job:
+    script:
+        - cargo test
