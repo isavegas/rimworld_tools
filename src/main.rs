@@ -6,36 +6,15 @@ use std::path::{Path, PathBuf};
 use quick_xml::reader::Reader;
 use quick_xml::events::Event;
 
+mod semver;
+use semver::Version;
+
 // On 1.0, this might change.
 const APPID: & 'static str = "294100";
 const LIBRARY_PATH: & 'static str = "F:\\SteamLibrary";
 const WORKSHOP_PATH: & 'static str = "steamapps\\workshop\\content";
 const GAME_PATH: & 'static str = "steamapps\\common\\RimWorld";
 
-#[derive(Debug)]
-struct Version {
-    major: i32,
-    minor: i32,
-    revision: i32,
-}
-impl Version {
-    fn from_str(in_str: &str) -> Result<Version, String> {
-        let parts = in_str.split(".").map(|s| s.parse() ).collect::<Vec<Result<i32,_>>>();
-        if parts.iter().any(|r| r.is_err()) {
-            return Err(format!("Invalid semver {}", in_str));
-        }
-        let semver_parts = parts.into_iter().map(|r| r.unwrap()).collect::<Vec<i32>>();
-        if semver_parts.len() != 3 {
-            Err(format!("Invalid semver, wrong number of parts: {}", semver_parts.len()))
-        } else {
-            Ok(Version {
-                major: semver_parts[0],
-                minor: semver_parts[1],
-                revision: semver_parts[2],
-            })
-        }
-    }
-}
 
 #[derive(Debug)]
 struct ModMetaData {
