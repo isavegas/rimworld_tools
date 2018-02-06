@@ -19,7 +19,6 @@ impl Save {
 #[allow(dead_code)]
 pub struct ModsConfigData {
     build_number: i32,
-    // by folder name
     active_mods: Vec<String>,
 }
 
