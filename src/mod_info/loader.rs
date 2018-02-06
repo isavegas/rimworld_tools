@@ -1,14 +1,13 @@
 extern crate quick_xml;
 
-use std::fs::{self};
+use std::fs;
 use std::path::{Path, PathBuf};
-
-use ::mod_info::Mod;
-use semver::Version;
 
 use self::quick_xml::reader::Reader;
 use self::quick_xml::events::Event;
 
+use ::mod_info::Mod;
+use semver::Version;
 
 pub fn load_mods(path: &Path) -> Result<Vec<Mod>, String> {
     let mut mods = Vec::new();
@@ -36,7 +35,7 @@ pub fn load_mods(path: &Path) -> Result<Vec<Mod>, String> {
                             if let Ok(text) = String::from_utf8(e.name().to_vec()) {
                                 name = text;
                             } else {
-                                name = String::new();
+                                return Err(String::from("Malformed tag name!"));
                             }
                         },
                         Ok(Event::Text(e)) => {
@@ -53,10 +52,10 @@ pub fn load_mods(path: &Path) -> Result<Vec<Mod>, String> {
                                             if let Ok(version) = version_result {
                                                 mod_info.meta_data.target_version = Some(version);
                                             } else if let Err(err) = version_result {
-                                                println!("Error parsing targetVersion: {}", err);
+                                                println!("Error parsing targetVersion: `{}` {}", text, err);
                                             }
                                         },
-                                        _ => ()
+                                        _ => (),
                                     }
                                 }
                             } else {

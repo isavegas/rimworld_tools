@@ -1,8 +1,19 @@
 use std::collections::HashMap;
 
 mod loader;
-pub use self::loader::{load_config, load_mods_config, load_keybinds};
+pub use self::loader::{load_config, load_mods_config, load_keybinds, load_modlist};
 
+#[derive(Debug)]
+#[allow(dead_code)]
+pub struct Save {
+    
+}
+#[allow(dead_code)]
+impl Save {
+    fn new() -> Save {
+        unimplemented!();
+    }
+}
 
 #[derive(Debug)]
 #[allow(dead_code)]

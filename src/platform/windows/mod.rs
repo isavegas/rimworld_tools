@@ -14,8 +14,6 @@ const GAME_PATH: & 'static str = "steamapps\\common\\RimWorld";
 
 const USERDATA_PATH: & 'static str = "AppData\\LocalLow\\Ludeon Studios\\RimWorld by Ludeon Studios";
 
-
-
 pub struct Platform {}
 
 impl Platform {
