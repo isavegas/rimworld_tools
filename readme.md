@@ -10,6 +10,8 @@
 * DRM free version support.
 * Workshop mod support for DRM free?
 * Modpack system?
+* Implement integration and end to end tests. Currently only testing internal
+  semver module.
 
 ### Notes
 * There are no libraries for iterating all steam libraries anywhere, so
