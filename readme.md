@@ -10,3 +10,8 @@
 * DRM free version support.
 * Workshop mod support for DRM free?
 * Modpack system?
+
+### Notes
+* There are no libraries for iterating all steam libraries anywhere, so
+  I'll have to implement one myself. Definitely something to implement
+  after core functionality.
