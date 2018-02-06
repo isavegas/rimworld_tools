@@ -1,7 +1,7 @@
-extern crate rimworld_mod_manager;
+extern crate rimworld_tools;
 
 mod semver_test {
-    use rimworld_mod_manager::semver::Version;
+    use rimworld_tools::semver::Version;
     #[test]
     fn eq_test() {
         let a = Version::new(0, 0, 1);
