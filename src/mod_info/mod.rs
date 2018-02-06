@@ -1,9 +1,11 @@
 use semver::Version;
 
+use std::collections::HashMap;
+
 mod loader;
 pub use self::loader::load_mods;
 
-#[derive(Debug)]
+#[derive(Clone,Debug)]
 pub struct ModMetaData {
     pub author: Option<String>,
     pub name: Option<String>,
@@ -23,7 +25,7 @@ impl ModMetaData {
     }
 }
 
-#[derive(Debug)]
+#[derive(Clone,Debug)]
 pub struct Mod {
     pub meta_data: ModMetaData,
     pub version: Option<Version>,
@@ -37,4 +39,23 @@ impl Mod {
             id: None,
         }
     }
+}
+
+// Low level representation for .rwc files.
+/** 
+    TODO: Higher level API for retrieving known data?
+        Use Class name and validate def?
+*/
+#[derive(Debug)]
+#[allow(dead_code)]
+struct Scenario {
+    game_version: String,
+    mod_ids: Vec<String>,
+    mod_names: Vec<String>,
+    name: String,
+    description: String,
+    published_file_id: String,
+    player_faction: String,
+    // (li Class, {tag -> tag text})
+    parts: (String, HashMap<String, String>),
 }

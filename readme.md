@@ -17,3 +17,7 @@
 * There are no libraries for iterating all steam libraries anywhere, so
   I'll have to implement one myself. Definitely something to implement
   after core functionality.
+* Currently plenty of `#[allow(dead_code)]`. Partially to get rid of compiler
+  warnings for what I'm currently working on, and partially because compiling
+  `main.rs` will trip dead code warnings for unused code that is still exported
+  in `lib.rs`. Understandable, yet aggravating nonetheless.

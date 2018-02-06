@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 
 
-#[derive(Debug, Eq)]
+#[derive(Clone,Debug,Eq)]
 pub struct Version {
     major: i32,
     minor: i32,

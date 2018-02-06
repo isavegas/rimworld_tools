@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 mod loader;
-pub use self::loader::{load_config, load_mods_config, load_keybinds, load_modlist};
+pub use self::loader::{load_config, load_keybinds, load_modlist};
 
 #[derive(Debug)]
 #[allow(dead_code)]
@@ -49,6 +49,36 @@ pub struct PrefsData {
     log_verbose: bool,
     pause_on_error: bool,
     reset_mods_config_on_crash: bool,
+}
+impl PrefsData {
+    pub fn new() -> PrefsData {
+        PrefsData {
+            volume_game: 0.0,
+            volume_music: 0.0,
+            volume_ambient: 0.0,
+            ui_scale: 0.0,
+            hats_only_on_maps: false,
+            adaptive_training_enabled: false,
+            preferred_names: String::new(),
+            resource_readout_categorized: false,
+            run_in_background: false,
+            custom_cursor_enabled: false,
+            edge_screen_scroll: false,
+            temperature_mode: String::new(),
+            autosave_interval_days: 0,
+            show_realtime_clock: false,
+            max_number_player_homes: 0,
+            plant_wind_sway: false,
+            pause_on_load: false,
+            pause_on_urgent_letter: false,
+            animal_name_mode: String::new(),
+            dev_mode: false,
+            lang_folder_name: String::new(),
+            log_verbose: false,
+            pause_on_error: false,
+            reset_mods_config_on_crash: false,
+        }
+    }
 }
 
 #[derive(Debug)]
