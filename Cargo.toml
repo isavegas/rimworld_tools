@@ -2,6 +2,7 @@
 name = "rimworld_tools"
 version = "0.1.0"
 authors = ["isavegas <isavegas2006@gmail.com>"]
+description = "Simple tool/library for querying RimWorld mod and game configuration."
 
 [dependencies]
 quick-xml = "0.11.0"
