@@ -7,7 +7,7 @@ pub struct Platform {}
 
 impl Platform {
     pub fn platform_name() -> String {
-        String::from(cfg!(target_os))
+        String::from("")
     }
     pub fn install_location() -> PathBuf {
         let path_buf = PathBuf::new();
