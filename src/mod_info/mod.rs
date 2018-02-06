@@ -1,5 +1,7 @@
-use std::collections::HashMap;
 use semver::Version;
+
+mod loader;
+pub use self::loader::load_mods;
 
 #[derive(Debug)]
 pub struct ModMetaData {

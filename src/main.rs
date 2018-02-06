@@ -1,14 +1,11 @@
-extern crate quick_xml;
 
 mod mod_info;
-mod mod_loader;
 mod platform;
 mod semver;
 mod userdata;
-mod userdata_loader;
 
 
-use mod_loader::load_mods;
+use mod_info::load_mods;
 use platform::platform::Platform;
 
 

@@ -1,12 +1,13 @@
+extern crate quick_xml;
 
 use std::fs::{self};
 use std::path::{Path, PathBuf};
 
-use quick_xml::reader::Reader;
-use quick_xml::events::Event;
-
 use ::mod_info::Mod;
-use ::semver::Version;
+use semver::Version;
+
+use self::quick_xml::reader::Reader;
+use self::quick_xml::events::Event;
 
 
 pub fn load_mods(path: &Path) -> Result<Vec<Mod>, String> {

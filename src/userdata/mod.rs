@@ -1,5 +1,9 @@
 use std::collections::HashMap;
 
+mod loader;
+pub use self::loader::{load_config, load_mods_config, load_keybinds};
+
+
 #[derive(Debug)]
 #[allow(dead_code)]
 pub struct ModsConfigData {
