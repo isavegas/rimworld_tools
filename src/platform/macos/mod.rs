@@ -1,6 +1,9 @@
 #![cfg(target_os = "macos")]
 #![allow(dead_code)]
 
+use std::path::PathBuf;
+use std::env;
+
 const APPID: & 'static str = "294100";
 const LIBRARY_PATH: & 'static str = "";
 const WORKSHOP_PATH: & 'static str = "steamapps\\workshop\\content";
