@@ -6,5 +6,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
+          name: Cargo tests
           command: cargo test
