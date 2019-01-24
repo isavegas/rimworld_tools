@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: rustlang/rust:nightly
+    steps:
+      - checkout
+      - run:
+          name: Cargo tests
+          command: cargo test

@@ -1,6 +1,9 @@
 #![cfg(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd", target_os = "openbsd"))]
 #![allow(dead_code)]
 
+use std::path::PathBuf;
+use std::env;
+
 const APPID: & 'static str = "294100";
 const LIBRARY_PATH: & 'static str = "";
 const WORKSHOP_PATH: & 'static str = "steamapps\\workshop\\content";
