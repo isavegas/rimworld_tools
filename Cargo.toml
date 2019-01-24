@@ -6,3 +6,6 @@ description = "Simple tool/library for querying RimWorld mod and game configurat
 
 [dependencies]
 quick-xml = "0.11.0"
+serde = "1.0"
+serde_derive = "1.0"
+serde-xml-rs = "0.3.0"

@@ -42,12 +42,12 @@ pub fn load_mods(path: &Path) -> Result<Vec<Mod>, String> {
                             if let Ok(text) = e.unescape_and_decode(&reader) {
                                 // No point in messing with it if we have no data.
                                 if text.len() != 0 {
-                                    match name.as_str() {
+                                    match name.to_lowercase().as_str() {
                                         "name" => mod_info.meta_data.name = Some(text),
                                         "author" => mod_info.meta_data.author = Some(text),
                                         "description" => mod_info.meta_data.description = Some(text),
                                         "url" => mod_info.meta_data.url = Some(text),
-                                        "targetVersion" => {
+                                        "targetversion" => {
                                             let version_result = Version::from_str(text.as_str());
                                             if let Ok(version) = version_result {
                                                 mod_info.meta_data.target_version = Some(version);

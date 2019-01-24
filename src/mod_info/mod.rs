@@ -10,7 +10,8 @@ pub struct ModMetaData {
     pub author: Option<String>,
     pub name: Option<String>,
     pub url: Option<String>,
-    pub target_version: Option<Version>,
+    pub supported_versions: Vec<Version>,
+    pub target_version: Option<Version>, // for old versions
     pub description: Option<String>,
 }
 impl ModMetaData {
@@ -19,6 +20,7 @@ impl ModMetaData {
             author: None,
             name: None,
             url: None,
+            supported_versions: vec!(),
             target_version: None,
             description: None,
         }

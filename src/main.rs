@@ -13,7 +13,7 @@ use semver::Version;
 use std::env;
 
 fn main() {
-    let current_rimworld_version = Version::from_str("0.18.0").unwrap();
+    let current_rimworld_version = Version::from_str("1.0.0").unwrap();
     let args: Vec<String> = env::args().collect();
     if args.contains(&String::from("mods")) {
         let mods_result = load_mods(Platform::workshop_location().as_path());
